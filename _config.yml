@@ -62,18 +62,18 @@ author:
   avatar : "/assets/images/bio-photo.jpg"
   bio    : "Aerospace engineering senior at MIT. Talk to me about satellites and rowing."
   links:
-    - label: "You Are In Fact Already Here"
-      icon: "fas fa-fw fa-link"
-      url: "https://alexmeredith8299.github.io/"
     #- label: "Twitter"
       #icon: "fab fa-fw fa-twitter-square"
       #url: "https://twitter.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/alexmeredith8299"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin-in"
       url: "https://instagram.com/satelliteseattlite"
+    - label: "last.fm"
+      icon: "fab fa-fw fa-lastfm"
+      url: "https://www.last.fm/user/alexm8299"
 
 #footer:
   #links:
