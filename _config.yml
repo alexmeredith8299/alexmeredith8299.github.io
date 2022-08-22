@@ -60,7 +60,7 @@ plugins:
 author:
   name   : "Alex Meredith"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Aerospace engineering senior at MIT. Talk to me about satellites and rowing."
+  bio    : "Space systems engineering graduate student at MIT. Talk to me about satellites and rowing."
   links:
     #- label: "Twitter"
       #icon: "fab fa-fw fa-twitter-square"

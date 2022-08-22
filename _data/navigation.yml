@@ -1,7 +1,13 @@
 main:
-  - title: "Aerospace"
-    url: /aerospace/
-  - title: "Software"
-    url: /software/
-  - title: "Blog"
-    url: /blog
+  - title: "Research"
+    url: /research/
+  - title: "Work Experience"
+    url: /work-experience/
+  - title: "Resume & CV"
+    url: /cv-and-resume/
+      #- title: "Aerospace"
+      #url: /aerospace/
+      #- title: "Software"
+      #url: /software/
+      #- title: "Blog"
+      #url: /blog

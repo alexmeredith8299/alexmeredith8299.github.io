@@ -3,7 +3,7 @@ permalink: /aerospace/
 title: ""
 ---
 <h3>Research</h3>
-Since June 2020, I've been working as an undergraduate researcher in the <a href="https://starlab.mit.edu/">MIT Space, Telecommunications, Astronomy, and Radiation Lab</a> (also known as STAR Lab). <br> <br> My work so far has been focused on attitude controls for <a href="https://space.skyrocket.de/doc_sdat/beavercube.htm">BeaverCube</a>, an underactuated (magnetorquer-only) 3U ocean-observing CubeSat with propulsion onboard. <br> <br> I contributed to <a href="https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=4728&context=smallsat">a paper</a> about BeaverCube's mission goals and engineering approach.
+From June 2020 to June 2021, I worked as an undergraduate researcher in the <a href="https://starlab.mit.edu/">MIT Space, Telecommunications, Astronomy, and Radiation Lab</a> (also known as STAR Lab). <br> <br> My work so far has been focused on attitude controls for <a href="https://space.skyrocket.de/doc_sdat/beavercube.htm">BeaverCube</a>, an underactuated (magnetorquer-only) 3U ocean-observing CubeSat with propulsion onboard. <br> <br> I contributed to <a href="https://digitalcommons.usu.edu/cgi/viewcontent.cgi?article=4728&context=smallsat">a paper</a> about BeaverCube's mission goals and engineering approach.
 
 <h3>Work Experience</h3>
 From June 2020 to August 2020, I interned at <a href="https://www.agi.com/">Analytical Graphics, Inc</a>.
