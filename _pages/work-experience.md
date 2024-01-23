@@ -2,6 +2,8 @@
 permalink: /work-experience/
 title: ""
 ---
+This page was last updated in August 2022.
+
 <h3>E-Space</h3>
 From June 2021 to August 2021, I interned at <a href="https://www.e-space.com/">E-Space</a>.
 

@@ -2,6 +2,8 @@
 permalink: /research/
 title: ""
 ---
+This page was last updated in August 2022.
+
 <h3> Machine Learning </h3>
 My master's thesis project applies rotation-equivariant convolutional neural networks (CNNs) to detecting clouds in satellite imagery. I expect to submit my thesis and receive my master's degree in January 2023. I plan to open-source all of my thesis code when the project is complete -- currently, I've open-sourced my <a href="https://github.com/alexmeredith8299/focal_loss_pytorch">implementation of focal loss for PyTorch</a>.
 <br/><br/>

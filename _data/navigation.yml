@@ -3,8 +3,8 @@ main:
     url: /research/
   - title: "Work Experience"
     url: /work-experience/
-  - title: "Resume & CV"
-    url: /cv-and-resume/
+  - title: "CV"
+    url: /cv/
       #- title: "Aerospace"
       #url: /aerospace/
       #- title: "Software"
