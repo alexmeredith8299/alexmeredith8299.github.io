@@ -1,8 +1,8 @@
 main:
   - title: "Research"
     url: /research/
-  - title: "Work Experience"
-    url: /work-experience/
+  - title: "Publications"
+    url: /publications/
   - title: "CV"
     url: /cv/
       #- title: "Aerospace"
