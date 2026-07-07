@@ -1,0 +1,7 @@
+# Papers featured in the image row on the homepage.
+# To swap which papers are shown, just add/remove/reorder permalinks here --
+# the title and image are pulled automatically from the matching file in
+# _publications/, so there's nothing else to keep in sync.
+- /publication/2026-06-24-prism-probabilistic-planning
+- /publication/2025-10-06-backward-reachable-trees
+- /publication/2025-07-08-revise-motion-planning

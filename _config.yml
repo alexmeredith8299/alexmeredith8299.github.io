@@ -1,9 +1,9 @@
 # Site settings
 locale                   : "en-US"
-title                    : "Alex Meredith"
+title                    : "Alex Rose"
 title_separator          : "-"
-name                     : &name "Alex Meredith"
-description              : &description "Alex Meredith's academic portfolio"
+name                     : &name "Alex Rose"
+description              : &description "Alex Rose's academic portfolio"
 url                      : https://alexmeredith8299.github.io
 baseurl                  : ""
 repository               : "alexmeredith8299/alexmeredith8299.github.io"
@@ -11,9 +11,8 @@ repository               : "alexmeredith8299/alexmeredith8299.github.io"
 # Site Author
 author:
   avatar           : "profile.png"
-  name             : "Alex Meredith"
-  pronouns         : "she/her"
-  bio              : "PhD student in Aerospace Engineering at MIT. NSF GRFP and Draper fellow."
+  name             : "Alex Rose"
+  bio              : "PhD Student"
   location         : "Cambridge, MA"
   employer         : "MIT Aerospace Controls Laboratory"
   email            : "alexm0802@gmail.com"
@@ -30,12 +29,14 @@ author:
 
 # Publication Category headings
 publication_category:
+  preprints:
+    title: 'Preprints'
+  peer-reviewed:
+    title: 'Peer-Reviewed Publications'
+  theses:
+    title: 'Theses'
   books:
     title: 'Books'
-  manuscripts:
-    title: 'Journal Articles'
-  conferences:
-    title: 'Conference Papers'
 
 # Site Settings
 teaser                   :

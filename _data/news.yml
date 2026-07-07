@@ -1,0 +1,10 @@
+# Single source of truth for news bullets shown on the homepage ("Recent News")
+# and on /archived-news/. Newest entry goes on top. The homepage shows the
+# first `recent_news_count` entries (see _pages/about.md); everything else
+# shows up automatically on the archive page.
+- "June 2026: Our new preprint (with Christopher Jewison and Jonathan P. How), [PRISM: Efficient and Locally Optimal Probabilistic Planning with Reachability Guarantees](https://arxiv.org/abs/2606.26413), is now available on arXiv."
+- "May 2026: Nick's paper (with me and Jonathan P. How) [GUARDIAN: Safety Filtering for Systems with Perception Models Subject to Adversarial Attacks](https://arxiv.org/abs/2602.06026) was published in IEEE Control Systems Letters."
+- "December 2025: Annika's paper (with Aneesa Sonawalla, me, and Jonathan P. How) [GRAND-SLAM: Local Optimization for Globally Consistent Large-Scale Multi-Agent Gaussian SLAM](https://doi.org/10.1109/LRA.2025.3623026) was published in IEEE Robotics and Automation Letters."
+- "October 2025: Our new preprint (with Naman Aggarwal, Christopher Jewison, and Jonathan P. How), [Efficient Probabilistic Planning with Maximum-Coverage Distributionally Robust Backward Reachable Trees](https://arxiv.org/abs/2510.04807), is now available on arXiv."
+- "August 2025: I presented our work (with Christopher Jewison and Jonathan P. How) [Robust Sampling-Based Covariance Steering for Aerocapture Guidance](https://arxiv.org/abs/2606.14979) at the AAS/AIAA Astrodynamics Specialist Conference in Boston, MA."
+- "July 2025: I presented our work (with Naman Aggarwal, Christopher Jewison, and Jonathan P. How) [REVISE: Robust Probabilistic Motion Planning in a Gaussian Random Field](https://arxiv.org/abs/2411.13369) at the American Control Conference (ACC) 2025 in Denver, CO."

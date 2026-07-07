@@ -22,7 +22,7 @@ bundle install
 ### Serve locally
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve --port 4001
 ```
 
 The site will be available at `http://localhost:4000`.

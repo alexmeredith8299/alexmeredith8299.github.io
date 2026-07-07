@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thesis Defense · Alex Meredith</title>
+
+<!--
+==================================================================
+  Alex Meredith — PhD thesis defense page.
+
+  TODO: fill in the placeholders below before sharing this page:
+    - Thesis title (hero .thesis)
+    - Date / Time / Room / Zoom link+ID (.brief)
+    - Google Calendar link (hero, optional "+ Add to calendar" button)
+    - Map pin coordinates + address (section 01)
+    - Contact email (footer)
+
+  PHOTOS  ... photos/01.jpg … 14.jpg are placeholder route photos
+             borrowed from a labmate's defense page (same building,
+             Building 33) — swap in your own door-to-door photos and
+             update captions/room numbers when you have them.
+  MAP     ... currently pinned to 42.360056, -71.094444 (outside
+             Bldg 33). Replace the <iframe src="…"> in section 01
+             with your own building's pin if different.
+==================================================================
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#EFF2F5;
+    --paper-2:#E6EBF0;
+    --ink:#162A3F;
+    --ink-soft:#5E7185;
+    --hair:#D5DCE3;
+    --amber:#D98A2B;
+    --amber-deep:#B86F1B;
+    --path:#177E89;
+    --card:#FFFFFF;
+    --goal-glow:rgba(217,138,43,.18);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans",system-ui,sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      linear-gradient(var(--paper-2) 1px,transparent 1px),
+      linear-gradient(90deg,var(--paper-2) 1px,transparent 1px);
+    background-size:46px 46px;
+    background-position:center top;
+  }
+
+  .wrap{max-width:760px;margin:0 auto;padding:0 22px;}
+
+  .eyebrow{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:12.5px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;padding:64px 0 30px;overflow:hidden;}
+  .hero-grid{position:relative;z-index:2;}
+  .hero .eyebrow{margin-bottom:22px;}
+  .hero h1{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:600;
+    font-size:clamp(42px,9vw,76px);
+    line-height:.98;
+    letter-spacing:-.02em;
+    margin:0 0 18px;
+  }
+  .hero .thesis{
+    font-family:"Space Grotesk",sans-serif;
+    font-weight:500;
+    font-size:clamp(18px,3.6vw,23px);
+    color:var(--ink);
+    max-width:28ch;
+    line-height:1.28;
+    margin:0 0 34px;
+  }
+
+  /* mission-brief readout */
+  .brief{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid var(--hair);
+    border-radius:14px;
+    background:var(--card);
+    overflow:hidden;
+  }
+  .brief div{padding:16px 18px;border-right:1px solid var(--hair);}
+  .brief div:last-child{border-right:none;}
+  .brief .k{
+    font-family:"IBM Plex Mono",monospace;
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:7px;
+  }
+  .brief .v{
+    font-family:"Space Grotesk",sans-serif;font-weight:600;
+    font-size:18px;line-height:1.15;
+  }
+  .brief .v small{display:block;font-weight:400;font-size:12px;color:var(--ink-soft);font-family:"IBM Plex Mono",monospace;margin-top:5px;letter-spacing:.02em;line-height:1.4;}
+  .brief a.v{color:var(--amber-deep);text-decoration:none;}
+  .brief a.v:hover{text-decoration:underline;}
+
+  @media(max-width:560px){
+    .brief{grid-template-columns:1fr 1fr;}
+    .brief div{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);}
+    .brief div:nth-child(2n){border-right:none;}
+    .brief div:nth-last-child(-n+2){border-bottom:none;}
+  }
+
+  /* trajectory backdrop in hero */
+  .traj{position:absolute;inset:0;z-index:1;width:100%;height:100%;pointer-events:none;opacity:.9;}
+  .traj-ellipse{
+    fill:var(--path);fill-opacity:.20;
+    stroke:var(--path);stroke-opacity:.60;stroke-width:1.5;
+    animation:ellipse-appear .3s ease-out both;
+  }
+  .traj-pin{transform-origin:center;animation:pop .5s ease-out 1.65s both;}
+  @keyframes ellipse-appear{from{opacity:0;}to{opacity:1;}}
+  @keyframes pop{from{opacity:0;transform:scale(.4);}to{opacity:1;transform:scale(1);}}
+
+  @media(max-width:600px){
+    .traj-group{transform:translate(40px,-40px);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  .block{padding:30px 0;border-top:1px solid var(--hair);}
+  .block-head{display:flex;align-items:baseline;gap:14px;margin-bottom:24px;}
+  .block-no{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;
+    color:var(--amber-deep);letter-spacing:.08em;
+  }
+  .block h2{
+    font-family:"Space Grotesk",sans-serif;font-weight:600;
+    font-size:clamp(22px,4.5vw,28px);margin:0;letter-spacing:-.01em;
+  }
+  .lede{color:var(--ink-soft);margin:-8px 0 26px;font-size:15.5px;}
+
+  /* ---------- MAP ---------- */
+  .map-frame{
+    border:1px solid var(--hair);border-radius:14px;overflow:hidden;
+    background:var(--card);aspect-ratio:16/10;width:100%;
+  }
+  .map-frame iframe{width:100%;height:100%;border:0;display:block;}
+  .map-actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;}
+  .btn{
+    font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;
+    letter-spacing:.04em;text-decoration:none;padding:13px 20px;border-radius:10px;
+    display:inline-flex;align-items:center;gap:8px;transition:transform .12s ease,background .12s ease;
+  }
+  .btn-primary{background:var(--amber);color:#fff;}
+  .btn-primary:hover{background:var(--amber-deep);transform:translateY(-1px);}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--hair);}
+  .btn-ghost:hover{border-color:var(--ink-soft);transform:translateY(-1px);}
+
+  /* ---------- PHOTO WALKTHROUGH ---------- */
+  .walk{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:34px;}
+  .stop figure{margin:0;}
+  .stop img{
+    width:100%;height:auto;display:block;border-radius:14px;
+    border:1px solid var(--hair);background:var(--paper-2);
+  }
+  .stop figcaption{display:flex;gap:14px;align-items:flex-start;margin-top:14px;}
+  .stop .num{
+    flex:none;width:34px;height:34px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:600;
+    background:var(--paper);border:2.5px solid var(--amber);color:var(--amber-deep);
+  }
+  .stop.goal .num{background:var(--amber);color:#fff;box-shadow:0 0 0 6px var(--goal-glow);}
+  .stop .cap{font-size:15.5px;line-height:1.5;padding-top:4px;}
+  .stop .cap b{font-weight:600;}
+  .stop.goal .cap b{color:var(--amber-deep);}
+
+  /* ---------- FOOTER ---------- */
+  footer{padding:42px 0 60px;border-top:1px solid var(--hair);margin-top:8px;color:var(--ink-soft);}
+  footer .sig{font-family:"Space Grotesk",sans-serif;font-size:15px;color:var(--ink);}
+  footer .meta{font-family:"IBM Plex Mono",monospace;font-size:12px;margin-top:8px;letter-spacing:.04em;}
+  footer a{color:var(--amber-deep);text-decoration:none;font-weight:500;}
+  footer a:hover{text-decoration:underline;}
+
+  :focus-visible{outline:2.5px solid var(--amber);outline-offset:3px;border-radius:4px;}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <svg class="traj" viewBox="0 0 760 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g class="traj-group" transform="translate(40,0)">
+    <ellipse class="traj-ellipse" transform="translate(10,327)"  rx="26" ry="19" style="animation-delay:.00s"/>
+    <ellipse class="traj-ellipse" transform="translate(45,319)"  rx="26" ry="19" style="animation-delay:.08s"/>
+    <ellipse class="traj-ellipse" transform="translate(80,308)"  rx="26" ry="19" style="animation-delay:.16s"/>
+    <ellipse class="traj-ellipse" transform="translate(115,291)" rx="26" ry="19" style="animation-delay:.24s"/>
+    <ellipse class="traj-ellipse" transform="translate(150,271)" rx="26" ry="19" style="animation-delay:.32s"/>
+    <ellipse class="traj-ellipse" transform="translate(185,249)" rx="26" ry="19" style="animation-delay:.40s"/>
+    <ellipse class="traj-ellipse" transform="translate(220,228)" rx="26" ry="19" style="animation-delay:.48s"/>
+    <ellipse class="traj-ellipse" transform="translate(255,211)" rx="26" ry="19" style="animation-delay:.56s"/>
+    <ellipse class="traj-ellipse" transform="translate(290,202)" rx="26" ry="19" style="animation-delay:.64s"/>
+    <ellipse class="traj-ellipse" transform="translate(325,199)" rx="26" ry="19" style="animation-delay:.72s"/>
+    <ellipse class="traj-ellipse" transform="translate(360,200)" rx="26" ry="19" style="animation-delay:.80s"/>
+    <ellipse class="traj-ellipse" transform="translate(395,202)" rx="26" ry="19" style="animation-delay:.88s"/>
+    <ellipse class="traj-ellipse" transform="translate(430,200)" rx="26" ry="19" style="animation-delay:.96s"/>
+    <ellipse class="traj-ellipse" transform="translate(465,194)" rx="26" ry="19" style="animation-delay:1.04s"/>
+    <ellipse class="traj-ellipse" transform="translate(500,181)" rx="26" ry="19" style="animation-delay:1.12s"/>
+    <ellipse class="traj-ellipse" transform="translate(535,163)" rx="26" ry="19" style="animation-delay:1.20s"/>
+    <ellipse class="traj-ellipse" transform="translate(570,140)" rx="26" ry="19" style="animation-delay:1.28s"/>
+    <ellipse class="traj-ellipse" transform="translate(605,117)" rx="26" ry="19" style="animation-delay:1.36s"/>
+    <ellipse class="traj-ellipse" transform="translate(640,97)"  rx="26" ry="19" style="animation-delay:1.44s"/>
+    <ellipse class="traj-ellipse" transform="translate(675,80)"  rx="26" ry="19" style="animation-delay:1.52s"/>
+    <g class="traj-pin" transform="translate(700,70)">
+      <circle r="13" fill="none" stroke="#D98A2B" stroke-width="1.4" opacity=".5"/>
+      <circle r="6" fill="#D98A2B"/>
+    </g>
+  </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div class="eyebrow">PhD Thesis Defense · MIT AeroAstro · Aerospace Controls Lab</div>
+    <h1>Alex's PhD&nbsp;Defense</h1>
+    <p class="thesis">Robust Probabilistic Path Planning in Uncertain Environments</p>
+
+    <div class="brief">
+      <div>
+        <div class="k">Date</div>
+        <div class="v">Thursday, July 23<small>2026</small></div>
+      </div>
+      <div>
+        <div class="k">Time</div>
+        <div class="v">12:00 PM<small>–2:00 PM ET</small></div>
+      </div>
+      <div>
+        <div class="k">Room</div>
+        <div class="v">33-218<small>Building 33 · AeroAstro</small></div>
+      </div>
+      <div>
+        <div class="k">Remote</div>
+        <a class="v" href="#" target="_blank" rel="noopener">Join on Zoom<small>ID 962 4931 4934</small></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ MAP ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <span class="block-no">01</span>
+      <h2>On the map</h2>
+    </div>
+    <p class="lede">Pinned just outside Building 33 (AeroAstro) — the exact spot where the photo route below begins.</p>
+
+    <div class="map-frame">
+      <iframe
+        src="https://maps.google.com/maps?q=42.360056,-71.094444&z=17&output=embed"
+        title="Map: starting point outside MIT Building 33"
+        allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div class="map-actions">
+      <a class="btn btn-primary" href="https://www.google.com/maps/search/?api=1&query=42.360056,-71.094444" target="_blank" rel="noopener">Open in Google Maps →</a>
+      <a class="btn btn-ghost" href="https://maps.apple.com/?ll=42.360056,-71.094444&q=AeroAstro%20(Building%2033)" target="_blank" rel="noopener">Open in Apple Maps</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHOTO WALKTHROUGH ============ -->
+<section class="block">
+  <div class="wrap">
+    <div class="block-head">
+      <span class="block-no">02</span>
+      <h2>Door to door, in photos</h2>
+    </div>
+    <p class="lede">From the pin above to the conference room, step by step. The last frame is the door — Room 33-218.</p>
+
+    <ol class="walk">
+      <li class="stop">
+        <figure>
+          <img src="photos/01.jpg" alt="Lawn and walkway in front of MIT Building 33" width="1440" height="1080" decoding="async">
+          <figcaption><span class="num">01</span><span class="cap"><b>Start outside Building 33.</b> You're at the pin, on the lawn in front of the AeroAstro building. Head toward the stone facade.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/02.jpg" alt="Approaching the main entrance of Building 33" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">02</span><span class="cap"><b>Walk up to the main entrance.</b> Make for the central doors at the top of the steps.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/03.jpg" alt="Ornate central entrance doors at the top of the steps" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">03</span><span class="cap"><b>Go in through the front doors.</b> Through the tall ornate doors and into the lobby.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/04.jpg" alt="Interior lobby with a sky-and-clouds mural beside a staircase" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">04</span><span class="cap"><b>Cross the lobby.</b> Pass the sky mural and head for the stairwell.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/05.jpg" alt="Base of the stairwell, stairs leading up" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">05</span><span class="cap"><b>Start up the stairs.</b> Take the stairwell up toward the right level.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/06.jpg" alt="Continuing up the stairwell" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">06</span><span class="cap"><b>Keep climbing.</b> Up the next flight.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/07.jpg" alt="Upper flight of the stairwell" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">07</span><span class="cap"><b>One more flight.</b> Almost at the top.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/08.jpg" alt="Landing at the top of the stairs" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">08</span><span class="cap"><b>Step out at the landing.</b> Leave the stairwell at the top.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/09.jpg" alt="Hallway with windows along one side" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">09</span><span class="cap"><b>Follow the hallway.</b> Past the windows, straight ahead.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/10.jpg" alt="Level 2 stairwell marker for Building 33" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">10</span><span class="cap"><b>Check the level marker.</b> Confirm you're on the right floor. Keep going.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/11.jpg" alt="Corridor with a large astrophotograph on the wall" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">11</span><span class="cap"><b>Into the corridor.</b> Continue along the hallway.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/12.jpg" alt="Long hallway with a blue stripe along the wall" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">12</span><span class="cap"><b>Down the long hallway.</b> Keep following it.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop">
+        <figure>
+          <img src="photos/13.jpg" alt="Near the end of the hallway, doors ahead" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">13</span><span class="cap"><b>Almost there.</b> The door is just ahead.</span></figcaption>
+        </figure>
+      </li>
+      <li class="stop goal">
+        <figure>
+          <img src="photos/14.jpg" alt="Door of the conference room" width="1440" height="1080" loading="lazy" decoding="async">
+          <figcaption><span class="num">14</span><span class="cap"><b>Room 33-218 — you made it!</b> This is the conference room. See you inside.</span></figcaption>
+        </figure>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="sig">See you there. Thanks for coming.</div>
+    <div class="meta">Questions? <a href="mailto:alexm0802@gmail.com">ameredit@mit.edu</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

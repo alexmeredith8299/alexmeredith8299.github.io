@@ -1,0 +1,39 @@
+{% include base_path %}
+
+{% if post.id %}
+  {% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
+{% else %}
+  {% assign title = post.title %}
+{% endif %}
+
+<table class="publication-card">
+<tr>
+{% if post.image %}
+  <td style="width: 270px">
+    <img src="{{ base_path }}/images/publications/{{ post.image }}" width="250px" style="border: 2px solid black; float:left; margin-right:15px; border-radius: 20px;"/>
+  </td>
+{% endif %}
+  <td>
+    <div>
+      <h2 style="margin-top: 10px; margin-bottom: 0px;">
+        <a href="{{ base_path }}{{ post.url }}" rel="permalink">{{ title }}</a>
+      </h2>
+
+      {% if post.authors %}
+        <h3 style="font-weight: normal; margin-top: 10px; margin-bottom: 0px;">{{ post.authors }}</h3>
+      {% endif %}
+
+      <h3 style="font-weight: normal; margin-top: 10px; margin-bottom: 0px;">
+        {{ post.venue }}{% if post.date %}, {{ post.date | date: "%Y" }}{% endif %}
+      </h3>
+
+      <h3 style="margin-top: 10px; margin-bottom: 0px;">
+        {% if post.paperurl %}
+          <a style="text-decoration: none;" href="{{ post.paperurl }}" target="_blank">Paper <i class="fa fa-file" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+        {% endif %}
+        <a style="text-decoration: none;" href="{{ base_path }}{{ post.url }}" target="_blank">Cite <i class="fa fa-quote-right" aria-hidden="true"></i></a>&nbsp;&nbsp;&nbsp;
+      </h3>
+    </div>
+  </td>
+</tr>
+</table>
