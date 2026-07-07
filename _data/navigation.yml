@@ -1,13 +1,12 @@
 main:
-  #- title: "Research"
-  #  url: /research/
   - title: "Publications"
     url: /publications/
+
+  - title: "Talks"
+    url: /talks/
+
   - title: "CV"
     url: /cv/
-      #- title: "Aerospace"
-      #url: /aerospace/
-      #- title: "Software"
-      #url: /software/
-      #- title: "Resources"
-      #url: /resources
+
+  - title: "Blog"
+    url: /year-archive/
